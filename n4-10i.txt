@@ -1,0 +1,131 @@
+Termwork 4:
+Program Execution Steps:
+Capturing UDP packets with browser:
+1. Open Wireshark and double-click on any-interface to start the packet capture process.
+2. Open the browser and enter any website's fully qualified domain name in the browser address bar and hit enter.
+3. After the site is fully loaded, stop the capturing process in Wireshark go to edit in the menu bar and select find packet option or just press CTRL+F.
+4. In Find Packet menu bar, select the String option in the display filter drop-down menu and enter the name of the website in the next box and click on find.
+5. The arrow indicating towards the packet is the request packet, and the arrow coming out from the packet is the response packet.
+6. Click on any request or response DNS packet and examine UDP packet.
+7. Go to statistics: Generate I/O Graph, Flow Graph and study and analyze both the graphs
+
+
+Termwork 5:
+Program Execution Steps:
+1. Open Wireshark and double-click on any-interface to start the packet capture process.
+2. Open the browser and enter any website's fully qualified domain name in the browser address bar and hit enter.
+3. After the site is fully loaded, stop the capturing process, in Wireshark.
+4. Type the following in, apply a filter column and hit-enter: tcp.flags.fin==1 and tcp.flags.ack==1
+5. Select any one of these listed packets, right-click and hover on conversation filter and select TCP.
+6. Once done analyze the TCP Packets.
+7. Go to statistics: Generate I/O Graph, Flow Graph and study and analyze both the graphs
+8. Observe TCP 3-way Handshake mechanism, data transfer and connection termination 
+through TCP
+
+
+Termwork 6:
+Process Execution Steps:
+Step 1 : Open UBUNTU and locate and open ns-allinone-3.28 folder on Desktop.
+Step 2 : Go to ns-3.28 folder and open examples->tutorial->first.cc
+Step 3 : In first.cc , include the following code. (Before – “Simulator::Run ();”)
+		#include “ns3/netanim-module.h”
+		AnimationInterface anim(“first, xml”);
+		AsciiTraceHelper ascii;
+		pointToPoint.EnableAsciiAll(ascii.CreateFileStream(“first.tr”));
+		pointToPoint.EnablePcapAll(“first”);
+Step 4 : Copy first.cc and paste it in ns-3.28->scratch folder. Remember that scratch folder should contain only one .cc example file and it must contain scratch executable file named scratchsimulator.cc and other files can be deleted.
+Step 5 : Open terminal and change working directory to Desktop by cd Desktop and type following commands to go to location where scratch executable file is located i.e. scratch folder.
+Step 6 : cd ns-allinone-3.28
+Step 7 : cd ns-3.28
+Step 8 : Run the first.cc by entering following command.
+	./waf –run scratch/first
+Step 9 : Once build is successful, return to ns-allinone-3.28 folder with cd ../ and enter into netanim3.108 with cd netanim-3.108
+Step 10 : Now to see the animation, we have to open NetAnim software. So open by entering 
+./NetAnim on terminal.
+Step 11 : In NetAnim, open first.xml by clicking on open XML trace file icon.
+Step 12 : Click on run option/icon to see the animation. To see the packet transfer, open Packets Tab.
+
+
+Termwork 7:
+Process Execution Steps:
+Step 1 : Open UBUNTU and locate and open ns-allinone-3.28 folder on Desktop.
+Step 2 : Go to ns-3.28 folder and open examples->tutorial->second.cc
+Step 3 : In second.cc , include the following code. (Before – “Simulator::Run ();”)
+		#include “ns3/netanim-module.h”
+		AnimationInterface anim("second, xml");
+		AsciiTraceHelper ascii;
+		pointToPoint.EnableAsciiAll(ascii.CreateFileStream("second.tr"));
+		pointToPoint.EnablePcapAll("second");
+Step 4 : Copy second.cc and paste it in ns-3.28->scratch folder. Remember that scratch folder should contain only one .cc example file and it must contain scratch executable file named scratchsimulator.cc and other files can be deleted.
+Step 5 : Open terminal and change working directory to Desktop by cd Desktop and type following commands to go to location where scratch executable file is located i.e. scratch folder.
+Step 6 : cd ns-allinone-3.28
+Step 7 : cd ns-3.28
+Step 8 : Run the second.cc by entering following command.
+	./waf –run scratch/second
+Step 9 : Once build is successful, return to ns-allinone-3.28 folder with cd ../ and enter into netanim3.108 with cd netanim-3.108
+Step 10 : Now to see the animation, we have to open NetAnim software. So open by entering 
+./NetAnim on terminal.
+Step 11 : In NetAnim, open second.xml by clicking on open XML trace file icon.
+Step 12 : Click on run option/icon to see the animation. To see the packet transfer, open Packets Tab.
+
+
+Termwork 8:
+Process Execution Steps:
+Step 1 : Open UBUNTU and locate and open ns-allinone-3.28 folder on Desktop.
+Step 2 : Go to ns-3.28 folder and open examples->tutorial->third.cc
+Step 3 : In third.cc , include the following code. (Before – “Simulator::Run ();”)
+		#include “ns3/netanim-module.h”
+		AnimationInterface anim("third, xml");
+		AsciiTraceHelper ascii;
+		pointToPoint.EnableAsciiAll(ascii.CreateFileStream("third.tr"));
+		pointToPoint.EnablePcapAll("third");
+Step 4 : Copy third.cc and paste it in ns-3.28->scratch folder. Remember that scratch folder should contain only one .cc example file and it must contain scratch executable file named scratchsimulator.cc and other files can be deleted.
+Step 5 : Open terminal and change working directory to Desktop by cd Desktop and type following commands to go to location where scratch executable file is located i.e. scratch folder.
+Step 6 : cd ns-allinone-3.28
+Step 7 : cd ns-3.28
+Step 8 : Run the third.cc by entering following command.
+	./waf –run scratch/third
+Step 9 : Once build is successful, return to ns-allinone-3.28 folder with cd ../ and enter into netanim3.108 with cd netanim-3.108
+Step 10 : Now to see the animation, we have to open NetAnim software. So open by entering 
+./NetAnim on terminal.
+Step 11 : In NetAnim, open third.xml by clicking on open XML trace file icon.
+Step 12 : Click on run option/icon to see the animation. To see the packet transfer, open Packets Tab.
+
+
+Termwork 9:
+Process Execution steps:
+Go to the Location contiki-ng/tools/cooja/ with commands
+	1. Goto root directory
+	2. cd contiki-ng
+	3. cd tools
+	4. cd cooja
+Run the cooja simulator with
+	5. ant run 
+Steps to create motes and configure them as server and client
+	1. Goto File -> New Simulation
+	2. Name the simulation and click on create
+	3. Click on Motes -> Add motes -> Create a new mote type -> Sky mote
+	4. Click on Browse and select ipv6-hooks.c (/contiki-ng/examples/libs/ipv6-hooks)
+	5. Click on open and then on compile and then on create
+	6. Enter the number of motes as 4 and click on Add motes
+	7. Place all motes close to each other such that the coverage is 100% for each of them
+	8. Right click on mote 1 and then click More tools for Sky 1 and then on Serial Socket (SERVER). Mote 1 has been 	configured as Server.
+	9. Similarly, configure motes 2, 3 and 4 as clients.
+	10. Copy the server’s listening port number and paste it as the port number for all clients.
+	11. Start the server and connect the client to the server.
+	12. Run the simulation by clicking on Simulation -> Run Simulation
+
+
+Termwork 10:
+Process Execution steps:
+1. Goto File -> New Simulation
+2. Name the simulation and click on create
+3. Click on Motes -> Add motes -> Create a new mote type -> Sky mote
+4. Click on Browse and select rpl-udp(/contiki-ng/examples/libs/rpl-udp)
+5. Create udp-server.c and add 1 mote by clicking Motes -> Add new Mote -> Browse
+6. Create udp-client.c and add 1 mote
+7. Place both the motes close to each other
+8. Configure 1 as server and 2 as client
+9. Copy the server’s port number to the client.
+10. Start the server and connect the client.
+11. Run the simulation.
